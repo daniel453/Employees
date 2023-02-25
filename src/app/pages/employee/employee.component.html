@@ -1,1 +1,35 @@
-<p>employee works!</p>
+<main>
+  <section *ngIf="employee">
+    <div class="user">
+      <h2>User</h2>
+
+      <img
+        [src]="imgAfter30"
+        [alt]="employee.employee_name"
+        *ngIf="employee.employee_age >= 30"
+      />
+      <img
+        [src]="imgBefore30"
+        [alt]="employee.employee_name"
+        *ngIf="employee.employee_age < 30"
+      />
+    </div>
+    <div class="data">
+      <div class="data__p">
+        <small>Full name</small>
+        <p>{{ employee.employee_name }}</p>
+      </div>
+      <div class="data__p">
+        <small>Age</small>
+        <p>{{ employee.employee_age }}</p>
+      </div>
+      <div class="data__p">
+        <small>Salary</small>
+        <p>{{ employee.employee_salary | currency }}</p>
+      </div>
+      <button (click)="back()">Back</button>
+    </div>
+  </section>
+  <app-loading *ngIf="loading"></app-loading>
+  <app-error [message]="error" *ngIf="error"></app-error>
+</main>

@@ -17,7 +17,7 @@ export class EmployeeServiceService {
     return this.http.get<{ data: employee[] }>(`${this.API}/employees`)
   }
 
-  getEmployee(id: number) {
+  getEmployee(id: number | string) {
     return this.http.get<{ data: employee }>(`${this.API}/employee/${id}`)
   }
 }

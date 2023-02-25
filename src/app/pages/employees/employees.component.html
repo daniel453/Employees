@@ -8,6 +8,6 @@
       [employee]="employee"
     ></app-card-employee>
   </section>
-  <p *ngIf="loading">Cargando...</p>
-  <p *ngIf="error">Ups... ah ocurrido un error</p>
+  <app-loading *ngIf="loading"></app-loading>
+  <app-error [message]="error" *ngIf="error"></app-error>
 </main>

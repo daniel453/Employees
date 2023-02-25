@@ -1,4 +1,4 @@
-<div *ngIf="employee" class="card">
+<div *ngIf="employee" class="card" [routerLink]="[employee.id]">
   <h3>{{ employee.employee_name }}</h3>
   <div class="attributes">
     <img

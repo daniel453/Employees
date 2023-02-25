@@ -9,14 +9,12 @@ import { EmployeeServiceService } from 'src/app/services/employee-service.servic
 })
 export class EmployeesComponent implements OnInit {
   employees: employee[] = []
-  error: boolean = false
+  error: string | null = null
   loading: boolean = false
 
   constructor(
     private employeesService: EmployeeServiceService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
     this.loading = true
@@ -24,8 +22,8 @@ export class EmployeesComponent implements OnInit {
       .subscribe((users) => {
         this.employees = users.data
         this.loading = false
-      }, () => {
-        this.error = true
+      }, (error: { error: { message: string } }) => {
+        this.error = error.error.message
         this.loading = false
       })
   }

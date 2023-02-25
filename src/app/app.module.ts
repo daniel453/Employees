@@ -8,6 +8,8 @@ import { EmployeesComponent } from './pages/employees/employees.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CardEmployeeComponent } from './components/card-employee/card-employee.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CardEmployeeComponent } from './components/card-employee/card-employee.
     EmployeesComponent,
     EmployeeComponent,
     NotFoundComponent,
-    CardEmployeeComponent
+    CardEmployeeComponent,
+    LoadingComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
