@@ -2,27 +2,30 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { EmployeesComponent } from './pages/employees/employees.component'
 import { EmployeeComponent } from './pages/employee/employee.component'
+import { NotFoundComponent } from './pages/not-found/not-found.component'
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'employees'
-  },
-  {
-    path: 'employees',
     children: [
       {
         path: '',
+        redirectTo: 'employees',
+        pathMatch: 'full'
+      },
+      {
+        path: 'employees',
         component: EmployeesComponent
       },
       {
-        path: ':id',
+        path: 'employees/:id',
         component: EmployeeComponent,
       }
     ]
   },
   {
     path: '**',
+    component: NotFoundComponent
   }
 ]
 

@@ -1,1 +1,13 @@
-<p>employees works!</p>
+<header>
+  <h1>Employees</h1>
+</header>
+<main>
+  <section *ngIf="!error">
+    <app-card-employee
+      *ngFor="let employee of employees"
+      [employee]="employee"
+    ></app-card-employee>
+  </section>
+  <p *ngIf="loading">Cargando...</p>
+  <p *ngIf="error">Ups... ah ocurrido un error</p>
+</main>

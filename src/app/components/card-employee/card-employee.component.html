@@ -1,1 +1,22 @@
-<p>card-employee works!</p>
+<div *ngIf="employee" class="card">
+  <h3>{{ employee.employee_name }}</h3>
+  <div class="attributes">
+    <img
+      [src]="imgAfter30"
+      [alt]="employee.employee_name"
+      *ngIf="employee.employee_age >= 30"
+      class="attributes__userImg"
+    />
+    <img
+      [src]="imgBefore30"
+      [alt]="employee.employee_name"
+      *ngIf="employee.employee_age < 30"
+      class="attributes__userImg"
+    />
+    <div>
+      <p><b>Salary:</b> {{ employee.employee_salary | currency }}</p>
+      <p><b>Age:</b> {{ employee.employee_age }}</p>
+    </div>
+    <figure></figure>
+  </div>
+</div>
